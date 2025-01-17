@@ -53,7 +53,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{ .err = "expected 0 arguments" };
+            const bad_arg = Value{ .err = "expected 0 arguments" };
             if (args.len != 0) return bad_arg;
 
             switch (asset._meta.kind) {

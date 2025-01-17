@@ -65,7 +65,7 @@ pub const Builtins = struct {
             args: []const Value,
         ) !Value {
             _ = gpa;
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 0 arguments",
             };
             if (args.len != 0) return bad_arg;
@@ -95,7 +95,7 @@ pub const Builtins = struct {
             args: []const Value,
         ) !Value {
             _ = gpa;
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 0 arguments",
             };
             if (args.len != 0) return bad_arg;
@@ -127,7 +127,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 0 arguments",
             };
             if (args.len != 0) return bad_arg;
@@ -158,7 +158,7 @@ pub const Builtins = struct {
             _: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 1 string argument",
             };
             if (args.len != 1) return bad_arg;
@@ -198,7 +198,7 @@ pub const Builtins = struct {
         ) !Value {
             _ = gpa;
 
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 1 string argument",
             };
             if (args.len != 1) return bad_arg;
@@ -289,7 +289,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 1 string argument",
             };
             if (args.len != 1) return bad_arg;

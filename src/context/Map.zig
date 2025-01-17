@@ -43,7 +43,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{ .err = "expected 2 string arguments" };
+            const bad_arg = Value{ .err = "expected 2 string arguments" };
             if (args.len != 2) return bad_arg;
 
             const path = switch (args[0]) {
@@ -79,7 +79,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{ .err = "expected 1 string argument" };
+            const bad_arg = Value{ .err = "expected 1 string argument" };
             if (args.len != 1) return bad_arg;
 
             const path = switch (args[0]) {
@@ -117,7 +117,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{ .err = "'get?' wants 1 string argument" };
+            const bad_arg = Value{ .err = "'get?' wants 1 string argument" };
             if (args.len != 1) return bad_arg;
 
             const path = switch (args[0]) {
@@ -150,7 +150,7 @@ pub const Builtins = struct {
             args: []const Value,
         ) Value {
             _ = gpa;
-            const bad_arg = .{ .err = "'get?' wants 1 string argument" };
+            const bad_arg = Value{ .err = "'get?' wants 1 string argument" };
             if (args.len != 1) return bad_arg;
 
             const path = switch (args[0]) {
@@ -178,7 +178,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{ .err = "expected 0 arguments" };
+            const bad_arg = Value{ .err = "expected 0 arguments" };
             if (args.len != 0) return bad_arg;
 
             const kvs = try keyValueArray(gpa, map, null);
@@ -203,7 +203,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{ .err = "expected 1 string argument" };
+            const bad_arg = Value{ .err = "expected 1 string argument" };
             if (args.len != 1) return bad_arg;
 
             const filter: []const u8 = switch (args[0]) {

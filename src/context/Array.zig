@@ -82,7 +82,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{ .err = "expected 1 or 2 integer argument(s)" };
+            const bad_arg = Value{ .err = "expected 1 or 2 integer argument(s)" };
             if (args.len < 1 or args.len > 2) return bad_arg;
 
             const start = switch (args[0]) {
@@ -146,7 +146,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{ .err = "expected 1 integer argument" };
+            const bad_arg = Value{ .err = "expected 1 integer argument" };
             if (args.len != 1) return bad_arg;
 
             const idx = switch (args[0]) {

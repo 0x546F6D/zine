@@ -3,20 +3,37 @@
     .version = "0.0.0",
     .dependencies = .{
         .supermd = .{
-            .url = "git+https://github.com/kristoff-it/supermd#2260dce98037300d40b74462a7ea92525f5bb900",
-            .hash = "12206a2d7b0eb77aaa02348a06acea6df8b03075071fab668600f8a44ced23182cae",
+            .path = "../supermd/",
         },
         .scripty = .{
-            .url = "git+https://github.com/kristoff-it/scripty#df8c11380f9e9bec34809f2242fb116d27cf39d6",
-            .hash = "122014e78d7c69d93595993b3231f3141368e22634b332b0b91a2fb73a8570f147a5",
+            .path = "../scripty/",
         },
         .superhtml = .{
-            .url = "git+https://github.com/kristoff-it/superhtml#36f37aa5aa440805f27d4a9f5203e616a303c6a1",
-            .hash = "1220dcb13f7d63fdb2d60f528de211e5c6284010a8ca37542b8ef9fe6d77f990cb3d",
+            .path = "../superhtml/",
         },
         .ziggy = .{
-            .url = "git+https://github.com/kristoff-it/ziggy#c66f47bc632c66668d61fa06eda112b41d6e5130",
-            .hash = "1220115ff095a3c970cc90fce115294ba67d6fbc4927472dc856abc51e2a1a9364d7",
+            .path = "../ziggy/",
+        },
+        // .supermd = .{
+        //     .url = "git+https://github.com/kristoff-it/supermd#2260dce98037300d40b74462a7ea92525f5bb900",
+        //     .hash = "12206a2d7b0eb77aaa02348a06acea6df8b03075071fab668600f8a44ced23182cae",
+        // },
+        // .scripty = .{
+        //     .url = "git+https://github.com/kristoff-it/scripty#df8c11380f9e9bec34809f2242fb116d27cf39d6",
+        //     .hash = "122014e78d7c69d93595993b3231f3141368e22634b332b0b91a2fb73a8570f147a5",
+        // },
+        // .superhtml = .{
+        //     .url = "git+https://github.com/kristoff-it/superhtml#36f37aa5aa440805f27d4a9f5203e616a303c6a1",
+        //     .hash = "1220dcb13f7d63fdb2d60f528de211e5c6284010a8ca37542b8ef9fe6d77f990cb3d",
+        // },
+        // .ziggy = .{
+        //     .url = "git+https://github.com/kristoff-it/ziggy#c66f47bc632c66668d61fa06eda112b41d6e5130",
+        //     .hash = "1220115ff095a3c970cc90fce115294ba67d6fbc4927472dc856abc51e2a1a9364d7",
+        // },
+        // using zig-0.14 branch: zig fetch --save git+https://github.com/neurocyte/flow-syntax#zig-0.14
+        .@"flow-syntax" = .{
+            .url = "git+https://github.com/neurocyte/flow-syntax?ref=zig-0.14#3711541e089780e4da3bd7294990ba60e5ea50bc",
+            .hash = "12208b28892561181dbc85097fc6a033a442d7816a5012804ed261cd4091a2567b28",
         },
         .mime = .{
             .url = "git+https://github.com/andrewrk/mime.git#0b676643886b1e2f19cf11b4e15b028768708342",
@@ -25,10 +42,6 @@
         .zeit = .{
             .url = "git+https://github.com/rockorager/zeit?ref=v0.4.4#5041c7cac243f0d05f4578a334f52e12bb450e55",
             .hash = "12204b653c90b503f89e2f1a73c4754b83fb7275c100c81872deaca12c9f17e334ec",
-        },
-        .@"flow-syntax" = .{
-            .url = "git+https://github.com/neurocyte/flow-syntax#9eb5c4c74daecec2a73654628c31b68d9908ec2e",
-            .hash = "122065eda677896d25cefbd042384a5b9236a3a4a3b58857ab66e22ade7777f8623f",
         },
         .@"zig-afl-kit" = .{
             .url = "git+https://github.com/kristoff-it/zig-afl-kit#f003bfe714f2964c90939fdc940d5993190a66ec",

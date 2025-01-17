@@ -35,7 +35,7 @@ pub const Builtins = struct {
             _: Allocator,
             args: []const Value,
         ) !Value {
-            const argument_error = .{ .err = "'plus' wants one int argument" };
+            const argument_error = Value{ .err = "'plus' wants one int argument" };
             if (args.len != 1) return argument_error;
 
             switch (args[0]) {
@@ -61,7 +61,7 @@ pub const Builtins = struct {
             _: Allocator,
             args: []const Value,
         ) !Value {
-            const argument_error = .{ .err = "'gt' wants one int argument" };
+            const argument_error = Value{ .err = "'gt' wants one int argument" };
             if (args.len != 1) return argument_error;
 
             switch (args[0]) {
@@ -88,7 +88,7 @@ pub const Builtins = struct {
             _: Allocator,
             args: []const Value,
         ) !Value {
-            const argument_error = .{ .err = "expected 1 int argument" };
+            const argument_error = Value{ .err = "expected 1 int argument" };
             if (args.len != 1) return argument_error;
 
             switch (args[0]) {
@@ -115,7 +115,7 @@ pub const Builtins = struct {
             _: Allocator,
             args: []const Value,
         ) !Value {
-            const argument_error = .{ .err = "'div' wants one (int|float) argument" };
+            const argument_error = Value{ .err = "'div' wants one (int|float) argument" };
             if (args.len != 1) return argument_error;
 
             switch (args[0]) {

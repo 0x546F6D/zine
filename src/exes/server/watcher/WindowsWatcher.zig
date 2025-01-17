@@ -73,6 +73,7 @@ pub fn init(
 
     // Here we need pointers to both the read_buffer and entry overlapped structs,
     // which we can only do after setting up everything else.
+
     watcher.entries.lockPointers();
     for (0..comp_key) |key| {
         const entry = watcher.entries.getPtr(key).?;
@@ -81,7 +82,8 @@ pub fn init(
             @ptrCast(@alignCast(&watcher.read_buffer[entry.buf_idx])),
             ReadBufferEntrySize,
             @intFromBool(true),
-            windows.FILE_NOTIFY_CHANGE_LAST_WRITE | windows.FILE_NOTIFY_CHANGE_FILE_NAME | windows.FILE_NOTIFY_CHANGE_DIR_NAME,
+            windows.FileNotifyChangeFilter{ .file_name = true, .dir_name = true, .last_write = true },
+            // windows.FILE_NOTIFY_CHANGE_LAST_WRITE | windows.FILE_NOTIFY_CHANGE_FILE_NAME | windows.FILE_NOTIFY_CHANGE_DIR_NAME,
             null,
             &entry.overlap,
             null,
@@ -196,7 +198,8 @@ pub fn listen(
             @ptrCast(@alignCast(&self.read_buffer[entry.buf_idx])),
             ReadBufferEntrySize,
             @intFromBool(true),
-            windows.FILE_NOTIFY_CHANGE_LAST_WRITE | windows.FILE_NOTIFY_CHANGE_FILE_NAME | windows.FILE_NOTIFY_CHANGE_DIR_NAME,
+            windows.FileNotifyChangeFilter{ .file_name = true, .dir_name = true, .last_write = true },
+            // windows.FILE_NOTIFY_CHANGE_LAST_WRITE | windows.FILE_NOTIFY_CHANGE_FILE_NAME | windows.FILE_NOTIFY_CHANGE_DIR_NAME,
             null,
             &entry.overlap,
             null,

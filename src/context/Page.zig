@@ -199,9 +199,6 @@ pub const Footnote = struct {
 pub const dot = scripty.defaultDot(Page, Value, false);
 pub const PassByRef = true;
 
-pub const description =
-    \\The page currently being rendered.
-;
 pub const Fields = struct {
     pub const title =
         \\Title of the page, 
@@ -320,7 +317,7 @@ pub const Builtins = struct {
                 .err = "accessing assets of other pages has not been implemented yet, sorry!",
             };
 
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 1 string argument",
             };
             if (args.len != 1) return bad_arg;
@@ -371,7 +368,7 @@ pub const Builtins = struct {
         ) !Value {
             _ = gpa;
 
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 1 string argument",
             };
             if (args.len != 1) return bad_arg;
@@ -426,7 +423,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 1 string argument",
             };
             if (args.len != 1) return bad_arg;
@@ -807,7 +804,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 1 string argument",
             };
             if (args.len != 1) return bad_arg;
@@ -862,7 +859,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 1 string argument",
             };
             if (args.len != 1) return bad_arg;
@@ -925,7 +922,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 1 string argument",
             };
             if (args.len != 1) return bad_arg;
@@ -980,7 +977,7 @@ pub const Builtins = struct {
             _: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 1 string argument argument",
             };
             if (args.len != 1) return bad_arg;
@@ -1017,7 +1014,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 0 arguments",
             };
             if (args.len != 0) return bad_arg;
@@ -1067,7 +1064,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 0 arguments",
             };
             if (args.len != 0) return bad_arg;
@@ -1102,7 +1099,7 @@ pub const Builtins = struct {
             gpa: Allocator,
             args: []const Value,
         ) !Value {
-            const bad_arg = .{
+            const bad_arg = Value{
                 .err = "expected 0 arguments",
             };
             if (args.len != 0) return bad_arg;
@@ -1151,7 +1148,7 @@ pub const ContentSection = struct {
                 gpa: Allocator,
                 args: []const Value,
             ) !Value {
-                const bad_arg = .{
+                const bad_arg = Value{
                     .err = "expected 0 arguments",
                 };
                 if (args.len != 0) return bad_arg;
@@ -1195,7 +1192,7 @@ pub const ContentSection = struct {
                 gpa: Allocator,
                 args: []const Value,
             ) !Value {
-                const bad_arg = .{
+                const bad_arg = Value{
                     .err = "expected 0 arguments",
                 };
                 if (args.len != 0) return bad_arg;
@@ -1228,7 +1225,7 @@ pub const ContentSection = struct {
                 gpa: Allocator,
                 args: []const Value,
             ) !Value {
-                const bad_arg = .{
+                const bad_arg = Value{
                     .err = "expected 0 arguments",
                 };
                 if (args.len != 0) return bad_arg;
